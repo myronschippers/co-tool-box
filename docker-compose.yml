@@ -7,9 +7,10 @@ services:
   ##     docker-compose up --build -d client
   ## ----------------------------------------
   client:
-    build: 
+    build:
       context: ./
       dockerfile: ./Dockerfile.client
+    stdin_open: true
     ports:
       - 3000:3000 # expose ports - HOST:CONTAINER (for create-react-app)
       - 35729:35729 # expose ports - HOST:CONTAINER (for serviceworker warm reloading)
@@ -46,7 +47,7 @@ services:
   ##     docker-compose up --build -d server
   ## ----------------------------------------
   server:
-    build: 
+    build:
       context: ./
       dockerfile: ./Dockerfile.server
     ports:
