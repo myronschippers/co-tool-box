@@ -8,13 +8,12 @@
 
 .nav {
   overflow: hidden;
-  background-color: #33435b;
+  background-color: #0F0140;
 }
 
 .nav-link {
   float: left;
   color: #f2f2f2;
-  background-color: #33435b;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -33,4 +32,25 @@
 
 .nav-right {
   float: right;
+}
+
+.logo {
+  display: inline-block;
+  padding: 0 20px;
+  margin: 15px 0;
+  font-family: 'Teko', 'Tahoma', 'Geneva', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #a530f2;
+  text-decoration: none;
+}
+
+.logo-start {
+  font-weight: 500;
+  color: #0391d5;
+}
+
+.logo-end {
+  font-weight: 500;
+  color: #f229bd;
 }
