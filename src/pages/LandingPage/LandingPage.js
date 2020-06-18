@@ -4,6 +4,9 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 import './LandingPage.css';
 
+import Button from '@material-ui/core/Button';
+import Favorite from '@material-ui/icons';
+
 class LandingPage extends Component {
     state = {
         heading: 'Class Component',
@@ -21,12 +24,13 @@ class LandingPage extends Component {
         let loginOrLogout = (
             <div className="grid-col grid-col_4">
                 <h3>Already a Member?</h3>
-                <button
-                    className="btn btn_sizeFull"
+                <Button
+                    variant="contained"
+                    fullWidth
                     onClick={this.onLogin}
                 >
                     Login
-                </button>
+                </Button>
             </div>
         );
 
