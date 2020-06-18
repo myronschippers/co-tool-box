@@ -22,25 +22,13 @@ FROM node:12-alpine
 
 # Creating App Directory
 RUN mkdir -p /app
-RUN mkdir -p /app/server
-RUN mkdir -p /app/client
 WORKDIR /app
 
 #############################################
 # COPY DEPENDENCIES TO CONTAINER BE & FE
 #############################################
 
-COPY ./client/package.json /app/client/package.json
 COPY package.json /app
-
-#############################################
-# CLIENT DEPs INSTALLATION
-#############################################
-
-# install and cache client dependencies
-RUN npm run client:i
-COPY ./client /app/client
-RUN npm run build:client
 
 #############################################
 # SERVER DEPs INSTALLATION
@@ -57,6 +45,7 @@ RUN apk --no-cache add --virtual native-deps \
 
 # install and cache server dependencies
 RUN npm install
+RUN npm run build
 COPY . /app
 
 # Run final command to kick off server
